@@ -1,27 +1,84 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bahadir Cav - Aspiring Data Scientist. Explore the impact of climate change on Arabica coffee production and prices in Brazil using Tableau.">
+    <meta name="author" content="Bahadir Cav">
+    
+    <title>Bahadir Cav - Data Science Portfolio</title>
 
-    <title>Bahadir Cav's Website</title>
+    <!-- Tableau API -->
+    <script type="text/javascript" src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script type="text/javascript" src="./app.js"></script>
 
-    <script type="text/javascript"
-	    src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
-    <script type="text/javascript"></script>
-
+    <!-- Basic CSS for Layout -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        header {
+            margin-bottom: 20px;
+        }
+        main {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            margin: 10px;
+            padding: 10px 15px;
+            font-size: 16px;
+            border: none;
+            background: #0073e6;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: #005bb5;
+        }
+        #vizContainer {
+            margin-top: 20px;
+            min-height: 500px;
+        }
+        footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
 </head>
 
 <body>
 
-  <h1>Effects of Climate Change on Arabica Coffee Production and Price in Brazil Tableau Dashboard</h1>
+    <header>
+        <h1>Bahadir Cav</h1>
+        <h2>Aspiring Data Scientist</h2>
+    </header>
 
-    <button id = "exportPDF">Generate PDF</button>
-    <button id = "exportImage">Generate Image</button>
+    <main>
+        <h2>Effects of Climate Change on Arabica Coffee Production and Prices in Brazil</h2>
+        
+        <p>Explore the impact of climate change on Brazil's coffee industry using data visualization. This Tableau dashboard provides insights into temperature, precipitation, and price trends over time.</p>
+        
+        <button id="exportPDF" aria-label="Export dashboard as PDF">Generate PDF</button>
+        <button id="exportImage" aria-label="Export dashboard as Image">Generate Image</button>
 
+        <div id="vizContainer"></div>
+    </main>
 
-    <div id="vizContainer"></div>
-
-    <script src="./app.js"></script>
+    <footer>
+        <p>&copy; 2024 Bahadir Cav | Data Science Portfolio</p>
+    </footer>
 
 </body>
-
 </html>
