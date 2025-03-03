@@ -3,53 +3,46 @@ console.log("Initializing Tableau Dashboard...");
 // Declare viz variable globally
 let viz;
 
-// Tableau Public URL (Ensure it's accessible)
+// Tableau Public URL (Check if it's accessible)
 const url = "https://public.tableau.com/views/EffectsofClimateChangeonArabicaCoffeeProductionandPriceinBrazil/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link";
 
-// Get DOM elements
+// Get the viz container
 const vizContainer = document.getElementById("vizContainer");
-const exportPDF = document.getElementById("exportPDF");
-const exportImage = document.getElementById("exportImage");
 
-// Tableau options with accessibility optimizations
+// Tableau options for better performance
 const options = {
     hideTabs: true,
+    width: "100%",
+    height: "600px",  // Adjust for responsive sizing
     device: "desktop", // Optimized for desktop performance
     onFirstInteraction: function () {
-        console.log("Dashboard is now interactive!");
-        const workbook = viz.getWorkbook();
-        const activeSheet = workbook.getActiveSheet();
+        console.log("Tableau dashboard is now interactive!");
     },
 };
 
-// Load Tableau viz only when it enters the viewport (lazy loading for performance)
+// Function to load the Tableau dashboard
 function loadViz() {
-    if (!viz) {
+    if (!viz && vizContainer) {
         console.log("Loading Tableau visualization...");
-        viz = new tableau.Viz(vizContainer, url, options);
+        try {
+            viz = new tableau.Viz(vizContainer, url, options);
+        } catch (error) {
+            console.error("🚨 Failed to load Tableau dashboard:", error);
+        }
     }
 }
 
-// Lazy load when the user scrolls
-const observer = new IntersectionObserver(
-    (entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                loadViz();
-                observer.disconnect(); // Load only once
-            }
-        });
-    },
-    { rootMargin: "50px" }
-);
-observer.observe(vizContainer);
+// Ensure Tableau loads after DOM is fully ready
+document.addEventListener("DOMContentLoaded", function () {
+    setTimeout(loadViz, 500);  // Delay by 500ms to ensure smooth loading
+});
 
 // Export PDF function
 function generatePDF() {
     if (viz) {
         viz.showExportPDFDialog();
     } else {
-        console.warn("Tableau visualization is not loaded yet.");
+        console.warn("⚠ Tableau visualization is not loaded yet.");
     }
 }
 
@@ -58,16 +51,12 @@ function generateImage() {
     if (viz) {
         viz.showExportImageDialog();
     } else {
-        console.warn("Tableau visualization is not loaded yet.");
+        console.warn("⚠ Tableau visualization is not loaded yet.");
     }
 }
 
-// Event listeners for export buttons
-exportPDF?.addEventListener("click", generatePDF);
-exportImage?.addEventListener("click", generateImage);
+// Add event listeners for export buttons
+document.getElementById("exportPDF")?.addEventListener("click", generatePDF);
+document.getElementById("exportImage")?.addEventListener("click", generateImage);
 
-// Improve accessibility
-exportPDF.setAttribute("aria-label", "Export dashboard as PDF");
-exportImage.setAttribute("aria-label", "Export dashboard as an image");
-
-console.log("Tableau Dashboard script initialized successfully.");
+console.log("✅ Tableau Dashboard script loaded successfully.");
