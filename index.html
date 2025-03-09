@@ -3,30 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bahadir Cav's Personal Website</title>
+    <title>Bahadir Cav - Data Science Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background: #0073e6;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 1.5em;
+        }
+        nav {
+            text-align: center;
+            margin: 20px 0;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            font-weight: bold;
+            color: #0073e6;
+            padding: 10px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        p {
+            line-height: 1.6;
+            text-align: center;
+        }
+        .cta-button {
+            display: block;
+            width: fit-content;
+            margin: 20px auto;
+            padding: 12px 20px;
+            background: #0073e6;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .cta-button:hover {
+            background: #005bb5;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background: #0073e6;
+            color: white;
+        }
+    </style>
 </head>
 <body>
-	<h1>Welcome to the Personal Website of Bahadir Cav</h1>
-	<nav>
+
+<header>
+    Bahadir Cav - Data Science Portfolio
+</header>
+
+<nav>
     <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="CV_Cav_Bahadir.pdf" target="_blank" rel="noopener noreferrer">My CV</a></li>
     </ul>
 </nav>
-    <h2>My First Data Science Project: Effects of Climate Change on Arabica Coffee Production and Prices</h2>
 
+<div class="container">
+    <h2>Effects of Climate Change on Arabica Coffee Production and Prices</h2>
     <p>Explore the impact of climate change on Brazil’s coffee industry using Tableau.</p>
+    
+    <a href="https://public.tableau.com/views/EffectsofClimateChangeonArabicaCoffeeProductionandPriceinBrazil/Dashboard1?:language=en-US&:display_count=n&:origin=viz_share_link" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="cta-button">
+        👉 View the Tableau Dashboard
+    </a>
+</div>
 
-    <p>
-        <a href="https://public.tableau.com/views/EffectsofClimateChangeonArabicaCoffeeProductionandPriceinBrazil/Dashboard1?:language=en-US&:display_count=n&:origin=viz_share_link" 
-           target="_blank" 
-           rel="noopener noreferrer">
-            👉 Click here to open the Tableau dashboard
-        </a>
-    </p>
-	
-	Work in Progress: last updated: 07/03/2025
-
+<footer>
+    Work in Progress | Last updated: 07/03/2025
+</footer>
 
 </body>
 </html>
