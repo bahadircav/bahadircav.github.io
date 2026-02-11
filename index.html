@@ -1,115 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bahadir Cav - Data Science Portfolio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        header {
-            background: #0073e6;
-            color: white;
-            padding: 15px;
-            text-align: center;
-            font-size: 1.5em;
-        }
-        nav {
-            text-align: center;
-            margin: 20px 0;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-        }
-        nav ul li {
-            display: inline;
-            margin: 0 15px;
-        }
-        nav ul li a {
-            text-decoration: none;
-            font-weight: bold;
-            color: #0073e6;
-            padding: 10px;
-        }
-        .container {
-            max-width: 800px;
-            margin: auto;
-            background: white;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            margin-top: 20px;
-        }
-        h1, h2 {
-            text-align: center;
-        }
-        p {
-            line-height: 1.6;
-            text-align: center;
-        }
-        .cta-button {
-            display: block;
-            width: fit-content;
-            margin: 20px auto;
-            padding: 12px 20px;
-            background: #0073e6;
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-            transition: 0.3s;
-        }
-        .cta-button:hover {
-            background: #005bb5;
-        }
-        footer {
-            text-align: center;
-            margin-top: 20px;
-            padding: 10px;
-            background: #0073e6;
-            color: white;
-        }
-    </style>
+    <title>MED ALMANCA | Tıp Almancası & Kariyer Danışmanlığı</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<header>
-    Bahadir Cav - Data Enthusiast
-</header>
+    <header>
+        <div class="container nav-container">
+            <div class="logo">MED ALMANCA</div>
+            <a href="https://instagram.com/medalmanca" class="insta-link">@medalmanca</a>
+        </div>
+    </header>
 
-<nav>
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="CV_Cav_Bahadir.pdf" target="_blank" rel="noopener noreferrer">My CV</a></li>
-    </ul>
-</nav>
+    <section class="hero">
+        <div class="container">
+            <h1>Almanya'da Doktorluk: <br><span>Dil Eğitimi & Danışmanlık</span></h1>
+            <p class="subtitle">Sadece Almanca öğrenmeyin; denklik sürecinden hastane eşleşmesine kadar tüm süreci uzmanıyla yönetin.</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>🩺 Tıp Almancası</h3>
+                    <p>FSP (Fachsprachprüfung) odaklı, hasta-doktor simülasyonları içeren özel dersler.</p>
+                </div>
+                <div class="service-card">
+                    <h3>💼 Kariyer Danışmanlığı</h3>
+                    <p>Denklik (Approbation) süreci, CV hazırlama ve hastane iş görüşmesi koçluğu.</p>
+                </div>
+            </div>
 
-<div class="container">
-    <h2>Effects of Climate Change on Arabica Coffee Production and Prices</h2>
-    <p>Explore how climate change is affecting Brazil’s coffee industry through data analysis and visualization in Tableau.</p>
-    <p>
-        This Tableau dashboard presents insights derived from weather data processed using Python and libraries like Pandas and NumPy. I filtered NOAA weather station data based on location within Brazil’s Arabica coffee-growing regions and consolidated it with data from the University of Anglia’s CRU. The coffee price data comes from CEPEA, while production data is sourced from the USDA Foreign Agricultural Service.
-    </p>
-    <p>
-        You can explore an <a href="coffee_project_weather_map.html" target="_blank" rel="noopener noreferrer">interactive map</a> displaying the NOAA weather stations that provided data for this project.
-    </p>
-    <a href="https://public.tableau.com/views/EffectsofClimateChangeonArabicaCoffeeProductionandPriceinBrazil/Dashboard1?:language=en-US&:display_count=n&:origin=viz_share_link" 
-       target="_blank" 
-       rel="noopener noreferrer" 
-       class="cta-button">
-        👉 View the Tableau Dashboard
-    </a>
-</div>
+            <div class="form-container" id="iletisim">
+                <h3>Ücretsiz Ön Bilgi Formu</h3>
+                <p>Hedeflerinizi anlatın, size en uygun yol haritasını birlikte çizelim.</p>
+                
+                <form action="https://formspree.io/f/your-id" method="POST">
+                    <input type="text" name="name" placeholder="Adınız Soyadınız" required>
+                    <input type="email" name="_replyto" placeholder="E-posta Adresiniz" required>
+                    
+                    <select name="service_type" required>
+                        <option value="" disabled selected>Hangi hizmetle ilgileniyorsunuz?</option>
+                        <option value="Sadece Dil Eğitimi">Sadece Dil Eğitimi (Tıp Almancası)</option>
+                        <option value="Sadece Danışmanlık">Sadece Kariyer Danışmanlığı</option>
+                        <option value="Eğitim + Danışmanlık">Her İkisi (Full Paket)</option>
+                    </select>
 
-<footer>
-    Work in Progress | Last updated: 12/03/2025
-</footer>
+                    <select name="level" required>
+                        <option value="" disabled selected>Mevcut Almanca Seviyeniz</option>
+                        <option value="Başlangıç">Başlangıç (A0-A2)</option>
+                        <option value="Orta">Orta (B1-B2)</option>
+                        <option value="İleri">İleri / FSP Hazırlık (C1)</option>
+                    </select>
+
+                    <textarea name="message" placeholder="Sorularınız veya hedeflerinizden kısaca bahsedin..."></textarea>
+                    <button type="submit">Detaylı Bilgi Gönder</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 MED ALMANCA. Tüm Hakları Saklıdır.</p>
+        </div>
+    </footer>
 
 </body>
 </html>
